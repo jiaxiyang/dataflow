@@ -1,0 +1,26 @@
+name: Ubuntu
+on: push
+jobs:
+  release-test:
+    name: dataflow build on ubuntu
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: cmake
+      run: cmake -S . -B build -D CMAKE_BUILD_TYPE=Release
+    - name: build
+      run: cmake --build build --parallel 10
+    - name: test
+      run: ./build/examples/json_example && ./build/examples/spdlog_example
+      # run: bash -ex scripts/build.sh
+
+  tsan-test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: cmake
+      run: cmake -S . -B build -DCMAKE_CXX_FLAGS="-fsanitize=thread -g"
+    - name: build
+      run: cmake --build build --parallel 10
+    - name: test
+      run: ./build/examples/json_example && ./build/examples/spdlog_example
