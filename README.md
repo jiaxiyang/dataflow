@@ -17,7 +17,9 @@
 ### 设计遵循的原则
 
 1. KISS
-2. SOLID
+2. DRY
+3. boundaries
+4. SOLID
    - `The Single-responsibility principle`: 正交性， "There should never be more than one reason for a class to change." In other words, every class should have only one responsibility.
    - `The Open–closed principle`: 扩展性，"Software entities ... should be open for extension, but closed for modification."
    - `The Liskov substitution principle`: "Functions that use pointers or references to base classes must be able to use objects of derived classes without knowing it."
@@ -72,6 +74,8 @@
     - [ ] queue
     - [ ] threadpool
     - [ ] memorypool
+    - [ ] timer
+    - [ ] counter
 
 ### 3rd-party
 

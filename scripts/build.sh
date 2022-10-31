@@ -26,7 +26,7 @@ cmake --build ${BUILD_DIR}
 
 cmake --install ${BUILD_DIR} --strip --prefix ${INSTALL_DIR}
 
-# mv ${BUILD_DIR}/compile_commands.json .
+ln -sf ${BUILD_DIR}/compile_commands.json .
 #clang-tidy *.cpp
 
 # cpack --config ${BUILD_DIR}/CPackConfig.cmake
