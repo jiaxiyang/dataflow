@@ -1,15 +1,16 @@
 #!/bin/bash
 
-BUILD_TYPE=Release
+BUILD_TYPE=Debug
 BUILD_DIR=build
 INSTALL_DIR=${BUILD_DIR}/$(basename "$PWD")_$(echo ${BUILD_TYPE} | tr '[:upper:]' '[:lower:]')
 
-BUILD_SYSTEM=Ninja
-if ! [ -x "$(command -v ninja)" ]; then
-	BUILD_SYSTEM='Unix Makefiles'
-fi
+# BUILD_SYSTEM=Ninja
+# if ! [ -x "$(command -v ninja)" ]; then
+# 	BUILD_SYSTEM='Unix Makefiles'
+# fi
+BUILD_SYSTEM='Unix Makefiles'
 
-rm -rf ${BUILD_DIR}
+# rm -rf ${BUILD_DIR}
 
 cmake -G "${BUILD_SYSTEM}" -S . -B ${BUILD_DIR} \
 	-DCMAKE_BUILD_TYPE=${BUILD_TYPE} \
@@ -32,3 +33,5 @@ ln -sf ${BUILD_DIR}/compile_commands.json .
 # cpack --config ${BUILD_DIR}/CPackConfig.cmake
 ./build/examples/json_example
 ./build/examples/spdlog_example
+./build/examples/graph/boost_graph
+./build/examples/graph/boost_graph_topological_sort

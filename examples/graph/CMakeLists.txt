@@ -1,4 +1,4 @@
-list(APPEND GRAPH_EXAMPLES boost_graph)
+list(APPEND GRAPH_EXAMPLES boost_graph boost_graph_topological_sort)
 find_package(Boost REQUIRED)
 foreach(example IN LISTS GRAPH_EXAMPLES)
   add_executable(${example} ${example}.cpp)
