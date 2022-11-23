@@ -69,6 +69,13 @@
 
     - [ ] scheduler
     - [ ] executor
+    - [ ] async
+    - [ ] pipeline
+    - [ ] queue(buffer)
+
+1. note:
+   - node 是调度最小单位
+   - node 之间有 buffer 缓冲，用于异步流水
 
 ### basic tools(手写 + 设计文档)
 

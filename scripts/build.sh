@@ -35,3 +35,4 @@ ln -sf ${BUILD_DIR}/compile_commands.json .
 ./build/examples/spdlog_example
 ./build/examples/graph/boost_graph
 ./build/examples/graph/boost_graph_topological_sort
+./build/examples/graph/boost_subgraph
